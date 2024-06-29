@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Game Over Site" />
+    <meta name="keywords" content="Game Over" />
+    <title>Free Download Game</title>
+    <link rel="icon" href="css/photos/medallion-violet.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+
+    <section id="allGames" class="games">
+        <header id="head">
+            <img src="css/photos/wraper.png" class="w-100" alt="game photo">
+        </header>
+        <nav class="navbar navbar-expand-lg nav-bg position-sticky top-0 z-3 col-md-6 col-lg-9">
+            <div class="container d-flex align-items-center justify-content-between">
+                <h5 class="navbar-brand mb-0 text-uppercase">
+                    <img src="css/photos/logo-sm.png" alt="logo photo" style="max-width: 40px"> Game Reviews
+                </h5>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse small navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 menu small">
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase active" aria-current="page"
+                                data-category="mmorpg" data-ur1313m3t="true">mmorpg</a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase" data-category="shooter"
+                                data-ur1313m3t="true">shooter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase" data-category="sailing"
+                                data-ur1313m3t="true">sailing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase" data-category="permadeath"
+                                data-ur1313m3t="true">permadeath</a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase" data-category="superhero"
+                                data-ur1313m3t="true">superhero</a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="nav-link text-uppercase" data-category="pixel"
+                                data-ur1313m3t="true">pixel</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container my-5 home">
+            <section class="position-relative">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="gamesContainer">
+
+                </div>
+            </section>
+        </main>
+    </section>
+    <section class="allDetails d-none">
+        <div class="container">
+            <header class="hstack justify-content-between">
+                <h1 class="text-center h3 py-4">Details Game</h1>
+                <button class="btn-close btn-close-white" id="btnClose"></button>
+            </header>
+            <div class="row g-4" id="detailsContent">
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="mode-switch" onclick="toggleTheme()">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="loading d-none">
+        <span class="loader"></span>
+    </div>
+    <!--! ============  jquery File ============ -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--! ============ BootStrap JS File ============ -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--! ============ Main Js File ============ -->
+    <script type="module" src="js/main.js"></script>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+        }
+     document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const video = card.querySelector('.card-video');
+        const videoSrc = video.getAttribute('data-src');
+        if (videoSrc) {
+            video.src = videoSrc;
+        }
+        card.addEventListener('mouseover', function () {
+            if (videoSrc) {
+                video.style.display = 'block';
+                video.play();
+            }
+        });
+        card.addEventListener('mouseleave', function () {
+            if (videoSrc) {
+                video.pause();
+                video.style.display = 'none';
+            }
+        });
+    });
+});
+    </script>
+
+</body>
+
+</html>
