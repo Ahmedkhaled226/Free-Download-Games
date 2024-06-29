@@ -73,8 +73,7 @@ export class Gaming {
   showDetails(idGame) {
     const details = new Details(idGame);
     document.querySelector(".games").classList.add("d-none");
-    document.query
-    Selector(".allDetails").classList.remove("d-none");
+    document.querySelector(".allDetails").classList.remove("d-none");
   }
   
 }
